@@ -1,0 +1,1 @@
+# passagem sobre operadores aritiméticos.
