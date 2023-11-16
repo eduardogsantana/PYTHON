@@ -1,7 +1,7 @@
-# 4.faça um código que pede 5 letras e quando for consoante ele avisa "É uma consoante", imprima uma lista com as consolantes encontradas
+# 4.faça um código que pede 5 letras e quando for consoante ele avisa "É uma consoante", imprima uma lista com as consoantes encontradas
 lista_consoantes = []
-letra1 = input("Digite uma letra: ")
 
+letra1 = input("Digite uma letra: ")
 if letra1 != "a" and letra1 != "e" and letra1 != "i" and letra1 != "o" and letra1 != "u":
     print("É uma consoante!!")
     lista_consoantes.append(letra1)
@@ -25,6 +25,7 @@ letra5 = input("Digite uma letra: ")
 if letra5 != "a" and letra5 != "e" and letra5 != "i" and letra5 != "o" and letra5 != "u":
     print("É uma consoante!!")
     lista_consoantes.append(letra5)
+   
     print(lista_consoantes)
 
 print("*********************FIM DE CÓDIGO************************")
