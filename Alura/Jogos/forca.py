@@ -1,23 +1,25 @@
-def jogar():
+import random
 
-
+def imprime_mensagem_abertura():
     print(34 * "*")
     print("Bem vindo ao jogo de Forca!!")
     print(34 * "*")
 
-    arquivo = open ("palavras_forca.txt", "r")
+def jogar():
+
+    imprime_mensagem_abertura()
+
+    arquivo = open("palavras.txt", "r")
     palavras_1 = []
 
     for linha in arquivo:
         linha = linha.strip()
         palavras_1.append(linha)
 
-
-
     arquivo.close()
-    print(palavras_1)
+    numero = random.randrange(0, len(palavras_1))
+    palavra_secreta = palavras_1[numero].upper()
 
-    palavra_secreta = "batata".upper()
     letras_acertadas = ["_" for letra in palavra_secreta]
      
     print(letras_acertadas)
@@ -51,9 +53,6 @@ def jogar():
         print("Você perdeu, tente novamente!!!")
     
     print("!!!! Fim de jogo!!!!")
-
-def new_func():
-    return (read)
 
 if(__name__ == "__main__"):
     jogar()
