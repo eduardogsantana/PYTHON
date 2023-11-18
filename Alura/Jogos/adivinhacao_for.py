@@ -24,7 +24,7 @@ def jogar():
 
     print(numero_secreto)
 
-    for rodada in range(1, tentativas + 1):
+    for rodadas in range(1, tentativas + 1):
         print(f'Tentativa {rodadas} de {tentativas}')
         chute = int(input("Digite número um número entre 1 e 20: "))
         print("Você digitou o número:",chute)
