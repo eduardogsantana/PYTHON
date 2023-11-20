@@ -1,6 +1,6 @@
 # while = enquanto
 
-# loop infinito:
+# loop infinito: quando uma estrutura de repetição não tem fim.
 # while True
 
 contador = 0
