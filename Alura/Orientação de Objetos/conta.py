@@ -15,15 +15,17 @@ class Conta:
 
     def saca(self, valor):
         self.saldo -= valor
+    
+    def transfere(self, valor, destino):
+        self.saca(valor)
+        destino.deposita(valor)
 
 
 
-conta = Conta(122, "João", 500.0, 1000.0)
-conta_2 = Conta(123, "Eduardo", 50.0, 1000.0)
+conta_1 = Conta(123, "Gomes", 1500.0, 5000.0)
+conta_2 = Conta(312, "Santana", 1000.0, 4000.0)
 
-conta.deposita(100.0)
-conta_2.deposita(50.0)
+conta_2.transfere(100.0, conta_1)
 
-print(conta.saldo) # Para acessar o atributo específico que deseja.
-print(conta.extrato())
-print(conta_2.extrato())
+conta_2.extrato()
+conta_1.extrato()
