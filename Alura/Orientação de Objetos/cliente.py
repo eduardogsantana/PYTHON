@@ -1,11 +1,19 @@
 class Cliente:
     def __init__(self, nome):
-        self.nome = nome
+        self.__nome = nome
 
-    def get_nome(self):
-        return self.nome.title()
+    @property
+    def nome(self):
+        return self.__nome.title()
+
+    @nome.setter
+    def nome(self, nome):
+        self.__nome = nome
 
 
-nome_cliente = Cliente("joão")
+cliente = Cliente("joão")
 
-print(nome_cliente.get_nome())
+print(cliente.nome)
+cliente.nome = "eduardo"
+
+print(cliente.nome)
