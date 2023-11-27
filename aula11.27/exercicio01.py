@@ -5,6 +5,6 @@ def numero_p_n(numero):
     elif numero > 0 :
         return "P"
     
-numero = int(input('Digite um número: '))
+numero2 = int(input('Digite um número: '))
 
-print(numero_p_n(numero))
+print(numero_p_n(numero2))
