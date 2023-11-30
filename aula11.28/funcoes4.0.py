@@ -1,4 +1,4 @@
-# Escreva uma função chamada gorjeta, que recebe o valor da conta de um restaurante, calcule e exiba a gorjeta do garçom considerando 12% do valor da conta
+# Escreva uma função chamada gorjeta, que recebe o valor da conta de um restaurante, calcule e exiba a gorjeta do garçom considerando 12% do valor da conta.
 
 def gorjeta(valor_conta):
     valor_gorjeta = valor_conta * 0.12
