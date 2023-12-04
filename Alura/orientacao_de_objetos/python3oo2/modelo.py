@@ -19,29 +19,80 @@ class Programa:
     def dar_like(self):
         self._likes += 1
 
+    def __str__(self):#__str__ é um método especial, como __init__ , usado para retornar uma representação de string de um objeto.
+        return f'Nome: {self.nome} | Ano: {self.ano} | Likes: {self.likes}'
+
 class Filme(Programa):
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
 
+    def __str__(self):#__str__ é um método especial, como __init__ , usado para retornar uma representação de string de um objeto.
+        return f'Nome: {self.nome} | Ano: {self.ano} | Duração: {self.duracao} minutos | Likes: {self.likes}'
 
 class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
+    def __str__(self): #__str__ é um método especial, como __init__ , usado para retornar uma representação de string de um objeto.
+       return f'Nome: {self.nome} | Ano: {self.ano} | Temporadas: {self.temporadas} | Likes: {self.likes}'
 
- 
+class Playlist:
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self._programas = programas
+
+    def __getitem__(self, item): # método que define 'alguem' que é iterável
+        return self._programas[item]
+    
+    @property
+    def listagem(self):
+        return self._programas
+        
+   
+    def __len__(self): # método importado de list para a playlist.
+        return len(self._programas)
+
+
+
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
-vingadores.dar_like()
-vingadores.dar_like()
-vingadores.dar_like()
-print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano} - Duração: {vingadores.duracao} - Likes: {vingadores.likes}')
-
-
-
-
+tdmp = Filme('todo mundo em pânico', 1999, 120)
 reacher = Serie('reacher', 2022, 2)
+demolidor = Serie('demolidor', 2019, 2 )
+justiceiro = Serie('justiceiro', 2020, 2)
+homem_aranha = Filme('homem-aranha - sem volta para casa', 2021, 180)
+
+vingadores.dar_like()
+vingadores.dar_like()
+vingadores.dar_like()
+vingadores.dar_like()
+tdmp.dar_like()
+tdmp.dar_like()
+tdmp.dar_like()
+homem_aranha.dar_like()
+homem_aranha.dar_like()
+homem_aranha.dar_like()
+
+
 reacher.dar_like()
 reacher.dar_like()
-print(f'Nome: {reacher.nome} - Ano: {reacher.ano} - Temporadas: {reacher.temporadas} - Likes: {reacher.likes}')
+reacher.dar_like()
+reacher.dar_like()
+reacher.dar_like()
+reacher.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
+justiceiro.dar_like()
+justiceiro.dar_like()
+justiceiro.dar_like()
+
+
+filmes_e_series = [vingadores, homem_aranha,  reacher,  demolidor, justiceiro, tdmp]
+playlist_fim_de_semana = Playlist('fim de semana', filmes_e_series)
+
+print(f'Tamanho da Playlist: {len(playlist_fim_de_semana)}')
+
+for programa in playlist_fim_de_semana:
+    print(programa)
