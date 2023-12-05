@@ -1,4 +1,15 @@
-url = "bytebank.com/cambio?moedaDestino=dolar&moedaOrigem=real"
+# url = "bytebank.com/cambio?moedaDestino=dolar&moedaOrigem=real"
+url = " "
+
+#sanitização da url:
+url = url.replace(" ","") # poderia usar só o .strip, também tem o .lstrip que trabalha só com a esqueda e o .rstrip que trabalha só com a direita. Strip é mais indicado pois retira também caracteres especiais.
+
+
+# validação da url:
+if url == "": 
+    raise ValueError("A URL está vazia")
+
+ #retorna para o usuário que ocorreu um erro de valor. Nesse caso o valor da url está vazia.
 
 indice_interrogacao = url.find('?')
 url_base = url[:indice_interrogacao]
