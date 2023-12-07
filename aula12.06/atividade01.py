@@ -60,7 +60,6 @@ validar_acesso = {
 usuario = input("Digite o nome de usuário: ")
 senha = input("Digite a senha: ")
 
-
 if usuario in validar_acesso and validar_acesso[usuario] == senha:
     print("Login validado.")
 else:
