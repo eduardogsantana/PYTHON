@@ -3,7 +3,7 @@
 d = {"user": "Marcel" , "password": 1234}
 print(type(d))
 # Métodos:
-# has_key('eggs'), clear(), del d['key'], keys(), values(), items(), get(), update().
+# has_key('eggs'), clear(), del.d['key'], keys(), values(), items(), get(), update().
 # copy() fazer cópias de dicionários ! (Lembre-se que dicionário é mutável!)
 # ordenando dicionários: sorted() - ordena um dicionário na ordem crescente. sorted(d, key = d.get, reverse = True) - ordem decrescente.
 
