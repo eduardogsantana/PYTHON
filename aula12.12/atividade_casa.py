@@ -1,31 +1,34 @@
 # • Escreva um código que, recebe três palavras e uma frase, crie uma função que verifique se as palavras aparecem COMPLETAS na frase e indique qual intervalo de índices ele foi encontrada. Você deve utilizar uma lista para realizar a atividade.
 # Obs.: você deve validar se a palavra tem três ou mais letras
 # Obs.: você deve validar se a frase tem pelo menos 20 palavras
-def palavras_na_frase(palavra1, palavra2, palavra3, frase):
-    palavras_na_frase = frase.split()
+
+def encontrar_palavras(palavra1, palavra2, palavra3, frase):
     
     if len(frase) < 20:
-        return print("A frase precisa ter pelo menos 20 palavras.")
-    
-    palavras = [palavra1, palavra2, palavra3]
-    for palavra in palavras:
-        if len(palavra) < 3:
-            return print("Todas as palavras precisam ter três ou mais letras.")
-    
+        return "A frase deve conter pelo menos 20 palavras."
+
+    if len(palavra1) < 3 or len(palavra2) < 3 or len(palavra3) < 3:
+        return "As palavras devem ter pelo menos 3 letras."
+
+    lista_de_palavras = [palavra1, palavra2, palavra3]
+
     indices = []
-    for i in range(len(palavras_na_frase)):
-        if palavras_na_frase[i] == palavra1 and palavras_na_frase[i+1] == palavra2 and palavras_na_frase[i+2] == palavra3:
+    for i, palavra in enumerate(frase):
+        if palavra in lista_de_palavras:
             indices.append(i)
-    
-    if indices:
-        return print(f"As palavras foram encontradas nos índices: {indices}")
-    else:
-        return print("As palavras não foram encontradas na frase.")
 
-palavra1 = input("Digite a primeira palavra: ")
-palavra2 = input("Digite a segunda palavra: ")
-palavra3 = input("Digite a terceira palavra: ")
-frase = input("Digite a frase: ")
+    intervalos = []
+    for i in indices:
+        intervalo_inicio = i
+        while i + 1 < len(frase) and frase[i + 1] in lista_de_palavras:
+            i += 1
+        intervalos.append((intervalo_inicio, i))
 
-resultado = palavras_na_frase(palavra1, palavra2, palavra3, frase)
-print(resultado)
+    return intervalos if intervalos else "Nenhuma das palavras foi encontrada na frase."
+
+palavra1 = input('Digite uma palavra: ')
+palavra2 = input('Digite uma palavra: ')
+palavra3 = input('Digite uma palavra: ')
+frase = input('Digite uma frase: ')
+
+encontrar_palavras(palavra1, palavra2, palavra3, frase)
