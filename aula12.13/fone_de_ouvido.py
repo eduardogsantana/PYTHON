@@ -1,15 +1,16 @@
+# para usar o property o atributo dos métodos tem que estar privado
+
 class FoneDeOuvido:
     def get_volume(self):
-        return self.volume
+        print('Entrei no GET')
+        return self.__volume
     
     def set_volume(self, novo_volume):
-        self.volume = novo_volume
+        print('Entrei no SET')
+        self.__volume = novo_volume
 
-    @property
-    def volume(self):
-        return self.get_volume, self.set_volume
+    volume = property(get_volume, set_volume)
+
 fone = FoneDeOuvido()
-
-fone.set_volume(200)        
-
+fone.volume = 200
 print(fone.volume)

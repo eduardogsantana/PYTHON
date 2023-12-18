@@ -39,16 +39,17 @@ class Restaurante:
             while True:
                 pedido_cliente = input('Faça o seu pedido: ')
                 pedidos.append(pedido_cliente)
+                lista_pedidos = ','.join(pedidos)
                 fim_pedido = input('Deseja algo mais? ')
                 if fim_pedido == 'não':
-                    print(f'Seu pedido de: {pedidos} foi anotado, aguarde até ficar pronto.')
-                    pedido = True
+                    print(f'Seu pedido de: {lista_pedidos} foi anotado, aguarde até ficar pronto.')
+                    self.pedido_anotado = True
                     break
         elif cliente_chegou == False:
             print(f'O cliente {self.cliente} ainda não chegou, aguarde.')
 
     def preparar_comida(self):
-        if self.pedido  == True:
+        if self.pedido_anotado  == True:
             print('O seu pedido está sendo preparado. ')
         else:
             print('O pedido não foi feito.')
@@ -61,5 +62,5 @@ class Restaurante:
 
 restaurante = Restaurante()
 restaurante.reserva_cliente()
-restaurante.anotar_pedido(False)
+restaurante.anotar_pedido(True)
 restaurante.preparar_comida()
