@@ -19,6 +19,10 @@
 # 	- Estado
 # 	- Comportamento
 
+# > Uma porta tem:
+#   ° Estados: aberta e fechada.
+#   ° Comportamento: abrir, fechar.
+
 # > E um carro:
 # 	° Que atributos e comportamentos ele tem?
 # 	- 

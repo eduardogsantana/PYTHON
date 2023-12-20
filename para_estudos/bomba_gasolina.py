@@ -60,4 +60,3 @@ class BombaGasolina:
 
 bomba = BombaGasolina(1000)
 bomba.set_tipo_combustivel()
-

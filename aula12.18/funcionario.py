@@ -1,9 +1,22 @@
 # cria a abstração para uma super classe funcionário com duas subclasses.
 class Funcionario:
-    def __init__(self, nome, idade):
-        self.nome = nome
+    def __init__(self, nome, idade, cpf):
+        self.__nome = nome
         self.idade = idade
+        self.__cpf = cpf 
 
+    def get_nome(self):
+        return self.__nome
+    
+    def get_cpf(self):
+        return self.__cpf
+    
+    def set_nome(self, novo_nome):
+        self.__nome = novo_nome
+
+    def set_cpf(self, novo_cpf):
+        self.__cpf = novo_cpf
+    
 class Professor(Funcionario):
     def __init__(self, nome, idade):
         super().__init__(nome, idade)
@@ -11,7 +24,7 @@ class Professor(Funcionario):
         self.turno = input(f'Professor {nome}, digite o seu turno: ').capitalize()
     
     def __str__(self):
-        return f'Seja bem-vindo, professor: {self.nome}, leciona a matéria: {self.materia}, no turno: {self.turno}'
+        return f'Seja bem-vindo, professor: {self.__nome}, leciona a matéria: {self.materia}, no turno: {self.turno}'
         
 
 class Diretor(Funcionario):
